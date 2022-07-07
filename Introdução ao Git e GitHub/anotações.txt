@@ -1,3 +1,96 @@
 Link para download do Git: https://git-scm.com/download/win
+Links úteis: 
+https://blog.betrybe.com/tecnologia/git-e-github/
+https://training.github.com/downloads/pt_BR/github-git-cheat-sheet.pdf
 
 O Git é um terminal extendido para otimizar o uso do Git.
+
+Git
+Sistema de controle de versão open-source.
+Utilizado para a criação de um histórico de alterações em código-fonte de projetos de desenvolvimento de software.
+Desenvolvido por Linus Torvalds.
+Utilizando Git podemos saber quais as alterações realizadas, quem fez e baixar essas mudanças. 
+Também podemos reverter para uma versão anterior.
+
+Conceitos:
+Repositório - local físico onde arquivos e cópias ficam armazenados, pode ser local ou remoto
+Branch - ramos, cópias do código que podem ser manipuladas de froma livre sem afetar funcionalidade do código-fonte.
+Merge - fundir a cópia e arquivos modificados ao ramo principal do projeto, feito após finalizar projeto em branch.
+Push Request - envio de modificações após o merge para repositório central para que seja atualizado.
+Pull Request - outra pessoa muda ramo pincipal no repositório central para qua as modificações realizadas sejam puxadas para sua máquina, fundindo nova versão com código local.
+Fork - cópia de um repositório remoto para a máquina local, realizado sempre que começar a trabalhar em um projeto que já existe.
+
+Dicas:
+Para configurações 
+$ git config --global user.name "[Nome]" - configura o nome ligado as transações de commit
+$ git config --global user.email "[endereço-de-email]" - configura email ligado as transações de commit
+$ git config --global color.ui auto - também configura email
+
+Criar repositório
+$ git init [nome-do-projeto] - cria um novo repositório local com nome
+$ git clone [url] - baixar projeto e seu histório inteiro
+
+Criando repositório:
+git status - verifica a presença da altereção de um novo arquivo
+git add . - adiciona o novo arquivo
+É legal verificar no git status cada passo
+git commit -m "Incluir anotação sobre X"
+git push origin main - inclui "definitivamente" no GitHub
+
+Mudanças (revisando edições e criando tramsação de commits)
+$ git status - listas arquivos novos ou modificados para serem commitados
+$ git diff - mostra diferenças do arquivo que não foram realizadas
+$ git add [arquivo] - faz snapshot do arquivo na preparação de seu versionamentp
+$ git diff --staged - mestra diferença entre aquivos e suas útimas versões
+$ git reset [arquivo] - preserva o conteúdo e deseleciona arquivo
+$ git commit -m "[mensagem-descrevendo]" - grava o snapshot permanentemente no histórico da versão
+
+Mudanças em grupo
+$ git branch - lista todos os branches locais no repositório atual
+$ git branch [nome-do-branch] - vai criar um novo branch
+$ git checkout [nome-do-branch] - muda para o branch específico e atualiza o diretório de trabalho
+$ git merge [branch] - combina o histórico do branch específico com o branch atual
+$ git branch -d [nome-do-branch] - exclui o branch específico
+
+Revisar histórico para navegar e inspecionar a evolução dos arquivos do projeto
+$ git log - lista o histórico de versões para o branch atual
+$ git log --follow [arquivo] - lista o histórico de versões para um arquivo, incluindo mudanças de
+nome
+$ git diff [primerio-branch]...[segundo-branch] - mostra a diferença de conteúdo entre dois branches
+$ git show [commit] - retorna mudanças de metadata e conteúdo para o commit especificado
+
+Refatorar nome de arquivos 
+$ git rm --cached [arquivo] - remove o arquivo do controle de versão mas preserva o arquivo
+localmente
+$ git rm [arquivo] - remove o arquivo do diretório de trabalho e o seleciona para remoção
+$ git mv [arquivo-original] [arquivo-renomeado] - muda o nome do arquivo e o seleciona para o commit
+
+Sincronizar mudanças
+$ git fetch [marcador] - baixe todo o histórico de um marcador de repositório
+$ git merge [marcador]/[branch] - combina o marcador do branch no branch local
+$ git push [alias] [branch] - envia todos os commits do branch local para o GitHub
+$ git pull - baixa o histórico e incorpora as mudanças
+
+Salvar fragmentos para arquivar ou restaurar mudanças incompletas
+$ git stash - armazena temporariamente todos os arquivos rastreados modificados
+$ git stash list - lista todos os conjuntos de alterações em stash
+$ git stash pop - restaura os arquivos recentes em stash
+$ git stash drop - descarta os conjuntos de alterações mais recentes em stash
+
+Desfazer commits
+$ git reset [commit] - desfaz todos os commits depois de `[commit]`, preservando
+mudanças locais
+$ git reset --hard [commit] - descarta todo histórico e mudanças para o commit especificado
+
+Excluir arquivos e diretórios temporários
+$ git ls-files --other --ignored --exclude-standard - lista todos os arquivos ignorados neste projeto
+*.log
+build/
+temp-*
+Um arquivo de texto chamado `.gitignore` suprime o versionamento
+acidental de arquivos e diretórios correspondentes aos padrões
+específicados
+
+GitHub
+Repositório remoto, um serviço online de hospedagem de repositórios do Git.
+Funciona como um servidor que agrega todas as modificações realizadas por cada uma das pessoas envolvidas em um projeto, unificando as diferentes versões de código e seus históricos, permitindo compartilhamento entre as equipes.
