@@ -1,4 +1,4 @@
-# Repósitorio do Desafio de Projeto sobre Git/GitHub
+# Repositório do Desafio de Projeto sobre Git/GitHub
 Repósitorio criado para o Desafio de Projeto.
 
 ## Links Úteis
